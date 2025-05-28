@@ -1,0 +1,129 @@
+@media (max-width: 800px) {
+  .project {
+    padding-top: 40%;
+    .works {
+      grid-template-columns: repeat(2, 1fr);
+      padding-bottom: 50px;
+      //   height: 100%;
+      //   width: 100%;
+      // visibility: hidden;
+    }
+  }
+
+  .about {
+    padding-top: 40%;
+    h2 {
+      margin-top: 5px;
+    }
+    .abt_p {
+      margin: 10px auto;
+
+      font-size: 1rem;
+    }
+    .jobs {
+      grid-template-columns: 1fr;
+      .job {
+        padding: 10px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    .ham {
+      visibility: visible;
+    }
+  }
+  .nav {
+    .nav-items {
+      position: absolute;
+      //   right: 4rem;
+      top: 1rem;
+      right: 0rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      font-size: 2rem;
+      font-weight: bold;
+
+      width: 100%;
+      height: 100%;
+      // visibility: hidden;
+
+      .nav-li {
+        transform: translateX(100vw);
+
+        visibility: hidden;
+        @include transit;
+
+        &.open {
+          transform: translateX(0);
+          visibility: visible;
+          @include transit;
+          @for $i from 1 through 4 {
+            &:nth-child(#{$i}) {
+              transition-delay: ($i * 0.1s)+0.15s;
+            }
+          }
+        }
+        .nav-link {
+          color: $secondary-color;
+          // transform: translateX(100%);
+          // @include transit;
+
+          &:hover {
+            color: $hov-color;
+          }
+        }
+      }
+    }
+  }
+  .home {
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0px;
+      // font-weight: lighter;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+    .web {
+      font-size: 1rem;
+    }
+  }
+  .project {
+    padding-top: 50%;
+    .works {
+      grid-template-columns: 1fr;
+      margin-top: 5%;
+      // height: 100%;
+      // width: 100%;
+      // visibility: hidden;
+      padding-bottom: 60px;
+    }
+  }
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  .about {
+    .jobs {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  footer {
+    .social-icons {
+      padding: 15px 15px;
+      .icons,
+      .copy p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

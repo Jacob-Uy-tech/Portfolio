@@ -1,0 +1,318 @@
+.about {
+  padding-top: 20%;
+  background: linear-gradient(
+      to right,
+      rgba(31, 28, 29, 0.4),
+      rgba(12, 10, 10, 0.3)
+    ),
+    url("/dist/dist/img/model-1.jpg") no-repeat top/cover;
+  height: 100vh;
+  text-align: center;
+  color: white;
+}
+.about h2 {
+  color: rgb(216, 55, 6);
+}
+.about .abt_p {
+  margin: 30px auto;
+  width: 80%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.about .jobs {
+  background-color: rgb(20, 20, 20);
+  padding: 40px 20%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  height: 100%;
+  margin: auto;
+  gap: 20px;
+}
+.about .jobs .job {
+  background-color: rgb(46, 45, 45);
+  height: 95%;
+  padding: 15px;
+  border-bottom: 10px solid rgb(216, 55, 6);
+  padding: 10px 20%;
+  padding-bottom: 30px;
+  margin: auto;
+}
+.about .jobs .job h3 {
+  margin: 5px 0;
+}
+.about .jobs .job p {
+  margin: 5px 0;
+  font-weight: bold;
+}
+.about .jobs .job .para {
+  font-weight: lighter;
+  height: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+.project {
+  padding-top: 30%;
+  background: linear-gradient(
+      to right,
+      rgba(31, 28, 29, 0.4),
+      rgba(12, 10, 10, 0.3)
+    ),
+    url("/dist/dist/img/model-1.jpg") no-repeat top/cover;
+  height: 100vh;
+  text-align: center;
+  color: white;
+}
+.project h2 {
+  color: rgb(216, 55, 6);
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+.project .works {
+  background-color: rgb(20, 20, 20);
+  padding: 40px 20%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  margin: auto;
+  gap: 20px;
+}
+.project .works .work {
+  background-color: rgb(46, 45, 45);
+  position: relative;
+  height: 95%;
+  border-bottom: 10px solid rgb(216, 55, 6);
+  margin: auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+.project .works .work::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-color: rgb(216, 55, 6);
+  transition: all 0.5s ease-in-out;
+}
+.project .works .work:hover::before {
+  content: "";
+  top: 0;
+}
+
+.contact {
+  padding-top: 20%;
+  background: linear-gradient(
+      to right,
+      rgba(31, 28, 29, 0.4),
+      rgba(12, 10, 10, 0.3)
+    ),
+    url("/dist/dist/img/model-1.jpg") no-repeat top/cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+.contact h1 {
+  font-size: 3rem;
+}
+.contact p {
+  color: rgb(216, 55, 6);
+  font-size: 1.5rem;
+}
+.contact .pe {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+.contact .pe i {
+  font-size: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+}
+
+header {
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
+}
+header .ham {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  right: 2rem;
+  width: 30px;
+  height: 28px;
+  cursor: pointer;
+}
+header .ham .burger {
+  position: absolute;
+  top: 12px;
+  background-color: white;
+  height: 4px;
+  width: 30px;
+  transition: all 0.5s ease-in-out;
+}
+header .ham .burger::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  background-color: white;
+  height: 4px;
+  width: 30px;
+}
+header .ham .burger::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  background-color: white;
+  height: 4px;
+  width: 30px;
+}
+header .ham .burger.open {
+  transform: rotate(360deg);
+  background: transparent;
+}
+header .ham .burger.open::before {
+  transform: rotate(45deg) translate(6px, 12px);
+}
+header .ham .burger.open::after {
+  transform: rotate(-45deg) translate(4px, -12px);
+}
+header nav {
+  position: absolute;
+  width: 100vw;
+  top: 100%;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+}
+header nav.open {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  background-color: rgb(22, 22, 22);
+  opacity: 0.9;
+  width: 100%;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+}
+header nav .nav-items {
+  position: absolute;
+  top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+}
+header nav .nav-items .nav-li {
+  transform: translateX(100vw);
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+header nav .nav-items .nav-li.open {
+  transform: translateX(0);
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+}
+header nav .nav-items .nav-li.open:nth-child(1) {
+  transition-delay: 0.25s;
+}
+header nav .nav-items .nav-li.open:nth-child(2) {
+  transition-delay: 0.35s;
+}
+header nav .nav-items .nav-li.open:nth-child(3) {
+  transition-delay: 0.45s;
+}
+header nav .nav-items .nav-li.open:nth-child(4) {
+  transition-delay: 0.55s;
+}
+header nav .nav-items .nav-li .nav-link {
+  color: rgb(216, 55, 6);
+}
+header nav .nav-items .nav-li .nav-link:hover {
+  color: wheat;
+}
+
+.home {
+  padding-top: 20%;
+  background: linear-gradient(
+      to right,
+      rgba(31, 28, 29, 0.4),
+      rgba(12, 10, 10, 0.3)
+    ),
+    url("/dist/dist/img/model-1.jpg") no-repeat top/cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home h3 {
+  font-size: 1.5rem;
+}
+.home h1 {
+  font-size: 4rem;
+  border-bottom: 2px solid white;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+.home h1 .special {
+  color: rgb(216, 55, 6);
+}
+.home .web {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+footer {
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+}
+footer .social-icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+footer .social-icons .icon {
+  color: rgb(216, 55, 6);
+}
+footer .social-icons .icon:hover {
+  color: wheat;
+  transition: all 0.5s ease-in-out;
+} /*# sourceMappingURL=main.css.map */

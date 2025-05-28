@@ -1,0 +1,190 @@
+@import "about";
+@import "project";
+@import "contact";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$secondary-color: rgb(216, 55, 6);
+$hov-color: wheat;
+
+@mixin transit {
+  transition: all 0.5s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(20, 20, 20);
+  height: 100vh;
+}
+
+header {
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
+
+  .ham {
+    position: absolute;
+    visibility: hidden;
+
+    z-index: 2;
+    top: 1rem;
+    right: 2rem;
+    width: 30px;
+    height: 28px;
+    // background-color: black;
+    cursor: pointer;
+    .burger {
+      position: absolute;
+      top: 12px;
+      background-color: white;
+      height: 4px;
+      width: 30px;
+      @include transit;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -12px;
+        background-color: white;
+        height: 4px;
+        width: 30px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 12px;
+        background-color: white;
+        height: 4px;
+        width: 30px;
+      }
+      &.open {
+        transform: rotate(360deg);
+        background: transparent;
+        &::before {
+          transform: rotate(45deg) translate(6px, 12px);
+        }
+        &::after {
+          transform: rotate(-45deg) translate(4px, -12px);
+        }
+      }
+    }
+  }
+  nav {
+    position: absolute;
+    width: 100vw;
+
+    top: 100%;
+    transform: translateY(-100%);
+    @include transit;
+    &.open {
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      background-color: rgb(22, 22, 22);
+
+      opacity: 0.9;
+      width: 100%;
+      transform: translateY(0);
+
+      @include transit;
+    }
+    .nav-items {
+      position: absolute;
+      //   right: 4rem;
+      top: 1.5rem;
+
+      display: flex;
+      // top: 0;
+      right: 4rem;
+      position: absolute;
+      flex-direction: row;
+      justify-content: end;
+      gap: 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      height: 70px;
+      width: 100%;
+      color: white;
+      .nav-li {
+        visibility: visible;
+        a {
+          color: white;
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.home {
+  padding-top: 20%;
+  background: linear-gradient(
+      to right,
+      rgba(31, 28, 29, 0.4),
+      rgba(12, 10, 10, 0.3)
+    ),
+    url("/dist/img/model-1.jpg") no-repeat top/cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    font-size: 1.5rem;
+    // font-weight: lighter;
+  }
+  h1 {
+    font-size: 4rem;
+    border-bottom: 2px solid white;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    .special {
+      color: $secondary-color;
+    }
+  }
+  .web {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+}
+
+footer {
+  width: 100vw;
+
+  position: fixed;
+  bottom: 0;
+  .social-icons {
+    // position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+
+    .icon {
+      color: $secondary-color;
+      &:hover {
+        color: $hov-color;
+        @include transit;
+      }
+    }
+  }
+}
+
+@import "responsive";

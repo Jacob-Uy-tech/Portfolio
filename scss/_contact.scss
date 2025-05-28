@@ -1,0 +1,32 @@
+.contact {
+  padding-top: 20%;
+  background: linear-gradient(
+      to right,
+      rgba(31, 28, 29, 0.4),
+      rgba(12, 10, 10, 0.3)
+    ),
+    url("/dist/img/model-1.jpg") no-repeat top/cover;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    color: rgb(216, 55, 6);
+    font-size: 1.5rem;
+  }
+  .pe {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    i {
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.about {
+  padding-top: 20%;
+  background: linear-gradient(
+      to right,
+      rgba(31, 28, 29, 0.4),
+      rgba(12, 10, 10, 0.3)
+    ),
+    url("/dist/img/model-1.jpg") no-repeat top/cover;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  h2 {
+    color: rgb(216, 55, 6);
+  }
+  .abt_p {
+    margin: 30px auto;
+    // margin: 20px 0px;s
+    width: 80%;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .jobs {
+    background-color: rgb(20, 20, 20);
+
+    padding: 40px 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    height: 100%;
+    // width: 300spx;
+    margin: auto;
+    gap: 20px;
+
+    .job {
+      background-color: rgb(46, 45, 45);
+      height: 95%;
+      padding: 15px;
+      border-bottom: 10px solid rgb(216, 55, 6);
+      padding: 10px 10%;
+      padding-bottom: 30px;
+      margin: auto;
+      width: 100%;
+
+      h3 {
+        margin: 5px 0;
+      }
+      p {
+        margin: 5px 0;
+        font-weight: bold;
+        // height: 100%;
+      }
+      .para {
+        font-weight: lighter;
+        height: 100%;
+        // padding: 10px;
+      }
+    }
+  }
+}
